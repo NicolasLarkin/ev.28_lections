@@ -75,29 +75,25 @@
 
 # open('text.txt', '')
 
-try:
-    from PIL import Image
-except ImportError:
-    import Image
+# try:
+#     from PIL import Image
+# except ImportError:
+#     import Image
 
-import pytesseract
-import re
+# import pytesseract
+# import re
 
-def get_imei_code(image):
-    string = pytesseract.image_to_string(image)
-    # print(string, type(string))
-    list_of_imei = re.findall(r'IMEI\d.\s\d+', string)
-    print(list_of_imei)
+# def get_imei_code(image):
+#     string = pytesseract.image_to_string(image)
+#     # print(string, type(string))
+#     list_of_imei = re.findall(r'IMEI\d.\s\d+', string)
+#     print(list_of_imei)
 
-    with open('imei_codes.txt', 'w') as file:
-        file.writelines(f'{x}\n' for x in list_of_imei)
+#     with open('imei_codes.txt', 'w') as file:
+#         file.writelines(f'{x}\n' for x in list_of_imei)
         
 
 
-image = 'imei.jpg'
-get_imei_code(image)
-
-
-
-
+# image = 'imei.jpg'
+# get_imei_code(image)
 
